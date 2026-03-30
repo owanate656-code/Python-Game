@@ -53,7 +53,7 @@ def turn():
     elif direction =='up':
         y-= TILE_SIZE
         dir_bef_none ='up' 
-        print(dir_bef_none)
+        
     elif direction =='down':
          y+= TILE_SIZE
          dir_bef_none ='down'
@@ -63,9 +63,6 @@ def turn():
     new_head = [x,y]
     snake.coordinates.insert(0, new_head)
     # print(snake.coordinates)
-    
-    
-    
     
         
 
@@ -121,11 +118,9 @@ def game_loop():
     global gameover , highscore , direction , pause
     turn()
     collision()
-    
     if gameover == False:
         window.after(SPEED, game_loop)
     elif gameover == True:
-        
         canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
                        font=('consolas',70), text="GAME OVER ", fill="red", tags='gameover')
         if score >= highscore:
@@ -203,6 +198,7 @@ game_loop()
 
 
 window.update()
+#-----------Centering Window------------
 window_width = window.winfo_width()
 window_height = window.winfo_height()
 
@@ -213,7 +209,6 @@ x = int((screen_width/2)-(window_width/2))
 y = int((screen_height/4)- (window_height/4))
 
 window.geometry(f'{ window_width}x{window_height}+{x}+{y}')
-
 
 #---------------------Keyboard Functions------------------
 window.bind('W', pause_game)

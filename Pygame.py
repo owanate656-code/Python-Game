@@ -14,7 +14,6 @@ clock = pygame.time.Clock()
 tiles =[pygame.Rect(400,400, 40,40) , pygame.Rect(450,400, 40,40) ,]
 floor= pygame.Rect(0 , 300 , 500,40)
 ball = pygame.Rect(60-20, 60-20, 40, 40)  # x, y, width, height
-
 def draw():
     window.fill('red')
     pygame.draw.rect(window, 'blue', rect)
